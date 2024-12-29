@@ -31,6 +31,10 @@ resource "aws_cloudfront_distribution" "example" {
 
     forwarded_values {
       query_string = false
+
+      cookies {
+        forward = "none"  # You can change this to "all" or "whitelist" if needed
+      }
     }
 
     viewer_protocol_policy = "redirect-to-https"
